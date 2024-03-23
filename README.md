@@ -48,7 +48,7 @@ To get started with this API, follow the instructions below.
 
 ## Example
 ```bash
-curl -X GET "http://localhost:3000/counties/suggest?q=cowlitz, wa" -H "accept: application/json"
+curl -X GET "http://localhost:3000/counties/suggest?q=cowlitz,wa" -H "accept: application/json"
  ```
 ## Built With
 
