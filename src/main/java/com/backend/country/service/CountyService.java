@@ -26,9 +26,7 @@ public class CountyService {
    */
   public List<CountyProjection> searchCounties(String name, String state) {
     // Perform a search based on the provided name and state
-    List<CountyProjection> searchResult = (!name.equalsIgnoreCase(state)) ?
-            countyRepository.findByNameAndStateContainingIgnoreCaseOrderByFipsAsc(name, state) :
-            countyRepository.findByNameContainingIgnoreCaseAndStateContainingIgnoreCaseOrderByFipsAsc(name, state);
+    List<CountyProjection> searchResult = countyRepository.findByNameContainingIgnoreCaseAndStateContainingIgnoreCaseOrderByFipsAsc(name, state);
 
     // Limit the number of results to 5
     return searchResult.subList(0, Math.min(searchResult.size(), 5));
